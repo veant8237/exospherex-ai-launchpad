@@ -1,29 +1,45 @@
 import { Link } from "react-router-dom";
 import { Zap, Mail, Phone, MapPin, Linkedin, Twitter, Youtube, ArrowRight } from "lucide-react";
-
 const footerLinks = {
-  company: [
-    { name: "About Us", path: "/about" },
-    { name: "Services", path: "/services" },
-    { name: "How It Works", path: "/how-it-works" },
-    { name: "Solutions", path: "/solutions" },
-  ],
-  resources: [
-    { name: "Why Choose Us", path: "/why-us" },
-    { name: "Pricing", path: "/pricing" },
-    { name: "Contact", path: "/contact" },
-  ],
+  company: [{
+    name: "About Us",
+    path: "/about"
+  }, {
+    name: "Services",
+    path: "/services"
+  }, {
+    name: "How It Works",
+    path: "/how-it-works"
+  }, {
+    name: "Solutions",
+    path: "/solutions"
+  }],
+  resources: [{
+    name: "Why Choose Us",
+    path: "/why-us"
+  }, {
+    name: "Pricing",
+    path: "/pricing"
+  }, {
+    name: "Contact",
+    path: "/contact"
+  }]
 };
-
-const socialLinks = [
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
-  { icon: Twitter, href: "#", label: "Twitter" },
-  { icon: Youtube, href: "#", label: "YouTube" },
-];
-
+const socialLinks = [{
+  icon: Linkedin,
+  href: "#",
+  label: "LinkedIn"
+}, {
+  icon: Twitter,
+  href: "#",
+  label: "Twitter"
+}, {
+  icon: Youtube,
+  href: "#",
+  label: "YouTube"
+}];
 export const Footer = () => {
-  return (
-    <footer className="relative bg-surface-1 border-t border-border/50">
+  return <footer className="relative bg-surface-1 border-t border-border/50">
       {/* Gradient overlay */}
       <div className="absolute inset-0 radial-glow opacity-30 pointer-events-none" />
 
@@ -44,18 +60,9 @@ export const Footer = () => {
               Empowering businesses with intelligent AI automation solutions. Scale faster, work smarter, grow exponentially.
             </p>
             <div className="flex items-center gap-3">
-              {socialLinks.map((social) => (
-                <a
-                  key={social.label}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all duration-300"
-                  aria-label={social.label}
-                >
+              {socialLinks.map(social => <a key={social.label} href={social.href} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all duration-300" aria-label={social.label}>
                   <social.icon className="w-5 h-5" />
-                </a>
-              ))}
+                </a>)}
             </div>
           </div>
 
@@ -63,17 +70,12 @@ export const Footer = () => {
           <div>
             <h4 className="font-display font-semibold text-foreground mb-6">Company</h4>
             <ul className="space-y-3">
-              {footerLinks.company.map((link) => (
-                <li key={link.path}>
-                  <Link
-                    to={link.path}
-                    className="text-muted-foreground hover:text-primary transition-colors duration-300 flex items-center gap-2 group"
-                  >
+              {footerLinks.company.map(link => <li key={link.path}>
+                  <Link to={link.path} className="text-muted-foreground hover:text-primary transition-colors duration-300 flex items-center gap-2 group">
                     <ArrowRight className="w-3 h-3 opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300" />
                     {link.name}
                   </Link>
-                </li>
-              ))}
+                </li>)}
             </ul>
           </div>
 
@@ -81,17 +83,12 @@ export const Footer = () => {
           <div>
             <h4 className="font-display font-semibold text-foreground mb-6">Resources</h4>
             <ul className="space-y-3">
-              {footerLinks.resources.map((link) => (
-                <li key={link.path}>
-                  <Link
-                    to={link.path}
-                    className="text-muted-foreground hover:text-primary transition-colors duration-300 flex items-center gap-2 group"
-                  >
+              {footerLinks.resources.map(link => <li key={link.path}>
+                  <Link to={link.path} className="text-muted-foreground hover:text-primary transition-colors duration-300 flex items-center gap-2 group">
                     <ArrowRight className="w-3 h-3 opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300" />
                     {link.name}
                   </Link>
-                </li>
-              ))}
+                </li>)}
             </ul>
           </div>
 
@@ -101,27 +98,19 @@ export const Footer = () => {
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <Mail className="w-5 h-5 text-primary mt-0.5" />
-                <a
-                  href="mailto:hello@exospherex.ai"
-                  className="text-muted-foreground hover:text-primary transition-colors duration-300"
-                >
+                <a href="mailto:hello@exospherex.ai" className="text-muted-foreground hover:text-primary transition-colors duration-300">
                   hello@exospherex.ai
                 </a>
               </li>
               <li className="flex items-start gap-3">
                 <Phone className="w-5 h-5 text-primary mt-0.5" />
-                <a
-                  href="tel:+1234567890"
-                  className="text-muted-foreground hover:text-primary transition-colors duration-300"
-                >
-                  +1 (234) 567-890
-                </a>
+                <a href="tel:+1234567890" className="text-muted-foreground hover:text-primary transition-colors duration-300">+91 9175918237</a>
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-primary mt-0.5" />
-                <span className="text-muted-foreground">
-                  San Francisco, CA
-                </span>
+                <span className="text-muted-foreground">India
+
+              </span>
               </li>
             </ul>
           </div>
@@ -142,6 +131,5 @@ export const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
