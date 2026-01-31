@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -13,7 +14,6 @@ import {
   Zap,
   Bot,
   Users,
-  BarChart3,
   Headphones,
   Puzzle,
   Database,
@@ -22,7 +22,7 @@ import {
   CheckCircle2,
   Play,
 } from "lucide-react";
-import heroBg from "@/assets/hero-bg.jpg";
+import { AsteroidField } from "@/components/3d/AsteroidField";
 
 const services = [
   {
@@ -108,16 +108,14 @@ const Index = () => {
     <Layout>
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background Image */}
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40"
-          style={{ backgroundImage: `url(${heroBg})` }}
-        />
+        {/* 3D Asteroid Field Background */}
+        <Suspense fallback={null}>
+          <AsteroidField />
+        </Suspense>
 
         {/* Overlay gradients */}
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/80 to-background" />
-        <div className="absolute inset-0 radial-glow" />
-        <div className="absolute inset-0 grid-pattern opacity-50" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/40 to-background pointer-events-none" />
+        <div className="absolute inset-0 radial-glow pointer-events-none" />
 
         <div className="container-custom relative z-10 pt-24 pb-20">
           <div className="max-w-4xl mx-auto text-center">
