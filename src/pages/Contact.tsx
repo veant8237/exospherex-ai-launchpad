@@ -7,6 +7,7 @@ import { Layout } from "@/components/layout";
 import { SectionWrapper, SectionHeading } from "@/components/sections";
 import { Mail, Phone, MapPin, Send, Calendar, MessageSquare, ArrowRight } from "lucide-react";
 import { toast } from "sonner";
+import { supabase } from "@/integrations/supabase/client";
 const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
@@ -20,8 +21,20 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1500));
+    const { error } = await supabase.from("contact_submissions").insert({
+      name: formData.name,
+      email: formData.email,
+      company: formData.company || null,
+      phone: formData.phone || null,
+      message: formData.message,
+    });
+
+    if (error) {
+      toast.error("Failed to send message. Please try again.");
+      setIsSubmitting(false);
+      return;
+    }
+
     toast.success("Message sent successfully! We'll get back to you within 24 hours.");
     setFormData({
       name: "",
