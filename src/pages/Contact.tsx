@@ -185,20 +185,11 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="font-medium text-foreground">Email</p>
-                    <a href="mailto:hello@exospherex.ai" className="text-muted-foreground hover:text-primary transition-colors">exospherex.ai.com
+                    <a href="mailto:info@exospherexai.com" className="text-muted-foreground hover:text-primary transition-colors">exospherex.ai.com
 
                   </a>
                   </div>
-                </li>
-                <li className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
-                    <Phone className="w-5 h-5 text-primary" />
-                  </div>
-                  <div>
-                    <p className="font-medium text-foreground">Phone</p>
-                    <a href="tel:+1234567890" className="text-muted-foreground hover:text-primary transition-colors">+91 9175918237</a>
-                  </div>
-                </li>
+                  </li>
                 <li className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
                     <MapPin className="w-5 h-5 text-primary" />

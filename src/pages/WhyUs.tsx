@@ -193,7 +193,6 @@ const WhyUs = () => {
                 "Rapid 6-8 week deployment",
                 "Fully customizable architecture",
                 "24/7 dedicated support team",
-                "Transparent, fixed pricing",
               ].map((item) => (
                 <li key={item} className="flex items-start gap-3 text-foreground">
                   <CheckCircle2 className="w-5 h-5 text-primary shrink-0" />
@@ -225,11 +224,6 @@ const WhyUs = () => {
               <Button variant="hero" size="xl">
                 Book Free Consultation
                 <ArrowRight className="w-5 h-5 ml-2" />
-              </Button>
-            </Link>
-            <Link to="/pricing">
-              <Button variant="hero-outline" size="xl">
-                View Pricing
               </Button>
             </Link>
           </div>

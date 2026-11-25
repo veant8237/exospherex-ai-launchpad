@@ -17,10 +17,9 @@ const footerLinks = {
   resources: [{
     name: "Why Choose Us",
     path: "/why-us"
-  }, {
-    name: "Pricing",
-    path: "/pricing"
-  }, {
+  },  
+  
+  {
     name: "Contact",
     path: "/contact"
   }]
@@ -98,13 +97,9 @@ export const Footer = () => {
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <Mail className="w-5 h-5 text-primary mt-0.5" />
-                <a href="mailto:hello@exospherex.ai" className="text-muted-foreground hover:text-primary transition-colors duration-300">
-                  hello@exospherex.ai
+                <a href="mailto:info@exospherexai.com" className="text-muted-foreground hover:text-primary transition-colors duration-300">
+                  info@exospherexai.com
                 </a>
-              </li>
-              <li className="flex items-start gap-3">
-                <Phone className="w-5 h-5 text-primary mt-0.5" />
-                <a href="tel:+1234567890" className="text-muted-foreground hover:text-primary transition-colors duration-300">+91 9175918237</a>
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-primary mt-0.5" />
